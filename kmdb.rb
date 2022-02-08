@@ -84,7 +84,15 @@ movie1.title = "Batman Begins"
 movie1.year_released = 2005
 movie1.rated = "PG-13"
 
-puts movie1.title
+movie2 = Movie.new
+movie2.title = "The Dark Knight"
+movie2.year_released = 2008
+movie2.rated = "PG-13"
+
+movie3 = Movie.new
+movie3.title = "The Dark Knight Rises"
+movie3.year_released = 2012
+movie3.rated = "PG-13"
 
 #Insert data for people
 

@@ -261,13 +261,19 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
 
-roles_movie1 = Role.where({ movie_id: 1})
-p roles_movie1
+p Movie.all.count
+p Person.all.count
+p Role.all.count
 
-for roles in roles_movie1
-    puts "#{roles_movie1.character_name}"
+batman = Movie.where({ title: "Batman Begins" })[0]
+puts batman.id
+batman_id = batman.id
+puts batman_id
+roles = Role.where(movie_id: batman_id)
+puts roles
+puts roles.count
 
-end
+
 
 for movie in movies
     puts "#{movie.title}"

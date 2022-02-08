@@ -77,6 +77,65 @@
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
+#Insert data for movies
+
+movie1 = Movie.new
+movie1.title = "Batman Begins"
+movie1.year_released = 2005
+movie1.rated = "PG-13"
+
+puts movie1.title
+
+#Insert data for people
+
+person1 = Person.new
+person1.name = "Christian Dale"
+
+person2 = Person.new
+person2.name = "Michael Caine"
+
+person3 = Person.new
+person3.name = "Liam Nelson"
+
+person4 = Person.new
+person4.name = "Katie Holmes"
+
+person5 = Person.new
+person5.name = "Gary Oldman"
+
+person6 = Person.new
+person6.name = "Heath Ledger"
+
+person7 = Person.new
+person7.name = "Aaron Eckhart"
+
+person8 = Person.new
+person8.name = "Maggie Gyllenhaal"
+
+person9 = Person.new
+person9.name = "Tom Hardy"
+
+person10 = Person.new
+person10.name = "Joseph Gordon-Levitt"
+
+person11 = Person.new
+person11.name = "Anne Hathaway"
+
+#Insert data for roles
+
+role1 = Role.new
+role1.character_name = "Batman"
+
+role1 = Role.new
+role1.character_name = "Batman"
+
+role1 = Role.new
+role1.character_name = "Batman"
+
+
+puts role1.character_name
+
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"

@@ -260,3 +260,16 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
+
+roles_movie1 = Role.where({ movie_id: 1})
+p roles_movie1
+
+for roles in roles_movie1
+    puts "#{roles_movie1.character_name}"
+
+end
+
+for movie in movies
+    puts "#{movie.title}"
+end
+

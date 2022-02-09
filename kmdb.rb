@@ -80,26 +80,6 @@ Role.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
-#Insert data for movies
-
-movie1 = Movie.new
-movie1.title = "Batman Begins"
-movie1.year_released = 2005
-movie1.rated = "PG-13"
-movie1.save
-
-movie2 = Movie.new
-movie2.title = "The Dark Knight"
-movie2.year_released = 2008
-movie2.rated = "PG-13"
-movie2.save
-
-movie3 = Movie.new
-movie3.title = "The Dark Knight Rises"
-movie3.year_released = 2012
-movie3.rated = "PG-13"
-movie3.save
-
 #Insert data for people
 
 person1 = Person.new
@@ -146,10 +126,33 @@ person11 = Person.new
 person11.name = "Anne Hathaway"
 person11.save
 
+#Insert data for movies
+
+movie1 = Movie.new
+movie1.title = "Batman Begins"
+movie1.year_released = 2005
+movie1.rated = "PG-13"
+movie1.save
+
+movie2 = Movie.new
+movie2.title = "The Dark Knight"
+movie2.year_released = 2008
+movie2.rated = "PG-13"
+movie2.save
+
+movie3 = Movie.new
+movie3.title = "The Dark Knight Rises"
+movie3.year_released = 2012
+movie3.rated = "PG-13"
+movie3.save
+
+
 #Insert data for roles
 
+#puts Movie.where({ title: “Batman Begins” })[0].id
+
 role1 = Role.new
-role1.movie_id = 1
+#role1.movie_id = Movie.where({ title: “Batman Begins” })[0].id
 role1.person_id = 2
 role1.character_name = "Bruce Wayne"
 role1.save
@@ -265,17 +268,12 @@ p Movie.all.count
 p Person.all.count
 p Role.all.count
 
-batman = Movie.where({ title: "Batman Begins" })[0]
-puts batman.id
-batman_id = batman.id
-puts batman_id
-roles = Role.where(movie_id: batman_id)
-puts roles
-puts roles.count
+roles = Role.all
 
-
-
-for movie in movies
-    puts "#{movie.title}"
+for role in roles
+    movie = 
+   puts role.character_name
 end
+
+
 

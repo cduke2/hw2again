@@ -126,24 +126,31 @@ person11 = Person.new
 person11.name = "Anne Hathaway"
 person11.save
 
+person12 = Person.new
+person12.name = "Christopher Nolan"
+person12.save
+
 #Insert data for movies
 
 movie1 = Movie.new
 movie1.title = "Batman Begins"
 movie1.year_released = 2005
 movie1.rated = "PG-13"
+movie1.person_id = person12.id
 movie1.save
 
 movie2 = Movie.new
 movie2.title = "The Dark Knight"
 movie2.year_released = 2008
 movie2.rated = "PG-13"
+movie2.person_id = person12.id
 movie2.save
 
 movie3 = Movie.new
 movie3.title = "The Dark Knight Rises"
 movie3.year_released = 2012
 movie3.rated = "PG-13"
+movie3.person_id = person12.id
 movie3.save
 
 
@@ -152,8 +159,8 @@ movie3.save
 #puts Movie.where({ title: “Batman Begins” })[0].id
 
 role1 = Role.new
-#role1.movie_id = Movie.where({ title: “Batman Begins” })[0].id
-role1.person_id = 2
+role1.movie_id = movie1.id
+role1.person_id = person2.id
 role1.character_name = "Bruce Wayne"
 role1.save
 
@@ -252,7 +259,8 @@ puts ""
 movies = Movie.all
 
 for movie in movies
-    puts "#{movie.title} #{movie.year_released} #{movie.rated}"
+    person_in_movie = Person.where({ id: movie.person_id })[0]
+    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{person_in_movie.name}"
 end
 
 # Prints a header for the cast output
@@ -271,8 +279,12 @@ p Role.all.count
 roles = Role.all
 
 for role in roles
-    movie = 
-   puts role.character_name
+    puts role.character_name
+    role_in_movie = Movie.where({ id: role.movie_id })[0]
+    puts role_in_movie.title
+    #puts People.where({ id: person_id})[0]
+    #puts "#{movie.title} #{movie.year_released} #{movie.rated}"
+    #puts "#{role.character_name} #{People.where"
 end
 
 
